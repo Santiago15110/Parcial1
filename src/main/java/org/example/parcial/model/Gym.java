@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Gym {
+
+    private static Gym instancia;
+
     private String nombre;
     private String nit;
     private String direccion;
@@ -25,13 +28,9 @@ public class Gym {
      * @param telefono
      * @param correoElectronico
      * @param paginaWeb
-     * @param listClientes
-     * @param listEntrenador
-     * @param listPlanEntrenamiento
-     * @param listServicioAdicional
-     * @param listIncripcion
+     *
      */
-    public Gym(String nombre, String nit, String direccion, String telefono, String correoElectronico, String paginaWeb, ArrayList<Cliente> listClientes, ArrayList<Entrenador> listEntrenador, ArrayList<PlanEntrenamiento> listPlanEntrenamiento, ArrayList<ServicioAdicional> listServicioAdicional, ArrayList<Inscripcion> listIncripcion) {
+    private Gym(String nombre, String nit, String direccion, String telefono, String correoElectronico, String paginaWeb) {
         this.nombre = nombre;
         this.nit = nit;
         this.direccion = direccion;
@@ -43,6 +42,16 @@ public class Gym {
         this.listPlanEntrenamiento = new ArrayList<>();
         this.listServicioAdicional = new ArrayList<>();
         this.listIncripcion = new ArrayList<>();
+    }
+
+
+    public static Gym getInstance(String nombre, String nit, String direccion, String telefono, String correoElectronico, String paginaWeb){
+        if(instancia == null){
+            instancia = new Gym(nombre, nit, telefono, direccion, correoElectronico, paginaWeb);
+
+
+        }
+        return instancia;
     }
 
 
@@ -62,8 +71,10 @@ public class Gym {
 
         for(Cliente c: listClientes){
 
-            if(c.getIdentificacion().equals(identificacion));
-            return false;
+            if(c.getIdentificacion().equals(identificacion)){
+                return false;
+            }
+
         }
 
         if(listClientes == null){
