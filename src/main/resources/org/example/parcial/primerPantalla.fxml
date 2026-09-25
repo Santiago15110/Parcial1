@@ -2,185 +2,43 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Spinner?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21"
+<AnchorPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.parcial.viewController.PrimerPantallaViewController">
+            fx:controller="org.example.parcial.viewController.PrimerPantallaViewController"
+            prefHeight="600.0" prefWidth="750.0">
 
-    <center>
-        <VBox spacing="20" padding="25">
+    <Label text="Gimnasio Luxury"
+           style="-fx-font-size: 36px; -fx-font-weight: bold;"
+           layoutX="200.0" layoutY="60.0" />
 
-            <!-- Título -->
-            <Label text="Nueva Inscripción"
-                   style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+    <VBox spacing="1"
+          layoutX="285.0" layoutY="200.0"
+          prefWidth="300.0">
 
-            <!-- Datos de inscripción -->
-            <GridPane hgap="15" vgap="15">
+        <Button text="Gestion de los clientes"
+                onAction="#irGestionClientes"
+                prefWidth="300.0" prefHeight="40.0" />
 
-                <Label text="Cliente:"
-                       GridPane.rowIndex="0"
-                       GridPane.columnIndex="0" />
+        <Button text="Gestion de los entrenadores"
+                onAction="#irGestionEntrenadores"
+                prefWidth="300.0" prefHeight="40.0" />
 
-                <ComboBox fx:id="cbCliente"
-                          prefWidth="250"
-                          promptText="Seleccione un cliente"
-                          GridPane.rowIndex="0"
-                          GridPane.columnIndex="1" />
+        <Button text="Gestionar planes de entrenamiento"
+                onAction="#irGestionPlanes"
+                prefWidth="300.0" prefHeight="40.0" />
 
+        <Button text="Gestion de los servicios adicionales"
+                onAction="#irGestionServicios"
+                prefWidth="300.0" prefHeight="40.0" />
 
-                <Label text="Plan:"
-                       GridPane.rowIndex="1"
-                       GridPane.columnIndex="0" />
+        <Button text="Inscripcion"
+                onAction="#irGestionInscripciones"
+                prefWidth="300.0" prefHeight="40.0" />
 
-                <ComboBox fx:id="cbPlan"
-                          prefWidth="250"
-                          promptText="Seleccione un plan"
-                          GridPane.rowIndex="1"
-                          GridPane.columnIndex="1" />
+    </VBox>
 
-
-                <Label text="Fecha inicio:"
-                       GridPane.rowIndex="2"
-                       GridPane.columnIndex="0" />
-
-                <DatePicker fx:id="dpFechaInicio"
-                            prefWidth="250"
-                            GridPane.rowIndex="2"
-                            GridPane.columnIndex="1" />
-
-
-                <Label text="Fecha fin:"
-                       GridPane.rowIndex="3"
-                       GridPane.columnIndex="0" />
-
-                <Label fx:id="lblFechaFin"
-                       text="15/03/2027"
-                       prefWidth="250"
-                       style="-fx-background-color: #eeeeee;
-                              -fx-padding: 8px;
-                              -fx-border-color: #cccccc;
-                              -fx-border-radius: 3px;"
-                       GridPane.rowIndex="3"
-                       GridPane.columnIndex="1" />
-
-            </GridPane>
-
-
-            <!-- Servicios adicionales -->
-            <VBox spacing="10">
-
-                <Label text="Servicios adicionales"
-                       style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-
-                <HBox spacing="10">
-
-                    <ComboBox fx:id="cbServicio"
-                              prefWidth="300"
-                              promptText="Seleccione un servicio" />
-
-                    <Spinner fx:id="spCantidad"
-                             prefWidth="100"
-                             editable="true" />
-
-                    <Button fx:id="btnAgregarServicio"
-                            text="Agregar"
-                            onAction="#agregarServicio"
-                            style="-fx-background-color: #2196F3;
-                                   -fx-text-fill: white;
-                                   -fx-font-weight: bold;" />
-
-                </HBox>
-
-            </VBox>
-
-
-            <!-- Tabla de servicios -->
-            <VBox spacing="10">
-
-                <Label text="Tabla de servicios agregados a esta inscripción"
-                       style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-
-                <TableView fx:id="tablaServicios"
-                           prefHeight="220">
-
-                    <columns>
-
-                        <TableColumn fx:id="colServicio"
-                                     text="Servicio"
-                                     prefWidth="300">
-                            <cellValueFactory>
-                                <PropertyValueFactory property="servicio" />
-                            </cellValueFactory>
-                        </TableColumn>
-
-                        <TableColumn fx:id="colCantidad"
-                                     text="Cantidad"
-                                     prefWidth="120">
-                            <cellValueFactory>
-                                <PropertyValueFactory property="cantidad" />
-                            </cellValueFactory>
-                        </TableColumn>
-
-                        <TableColumn fx:id="colSubtotal"
-                                     text="Subtotal"
-                                     prefWidth="150">
-                            <cellValueFactory>
-                                <PropertyValueFactory property="subtotal" />
-                            </cellValueFactory>
-                        </TableColumn>
-
-                    </columns>
-
-                </TableView>
-
-            </VBox>
-
-
-            <!-- Total -->
-            <HBox alignment="CENTER_RIGHT"
-                  spacing="10">
-
-                <Label text="Valor Total:"
-                       style="-fx-font-size: 18px;
-                              -fx-font-weight: bold;" />
-
-                <Label fx:id="lblValorTotal"
-                       text="$0"
-                       prefWidth="150"
-                       style="-fx-font-size: 18px;
-                              -fx-font-weight: bold;
-                              -fx-text-fill: #2196F3;" />
-
-            </HBox>
-
-
-            <!-- Botón guardar -->
-            <HBox alignment="CENTER_RIGHT">
-
-                <Button fx:id="btnGuardarInscripcion"
-                        text="Guardar Inscripción"
-                        onAction="#guardarInscripcion"
-                        prefWidth="200"
-                        prefHeight="40"
-                        style="-fx-background-color: #4CAF50;
-                               -fx-text-fill: white;
-                               -fx-font-size: 14px;
-                               -fx-font-weight: bold;" />
-
-            </HBox>
-
-        </VBox>
-    </center>
-
-</BorderPane>
+</AnchorPane>

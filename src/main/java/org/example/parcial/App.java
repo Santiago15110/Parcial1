@@ -27,4 +27,7 @@ public class App {
     public SceneManager getSceneManager() {
         return sceneManager;
     }
+
+    public void setStagePrincipal(Stage stage) {
+    }
 }
