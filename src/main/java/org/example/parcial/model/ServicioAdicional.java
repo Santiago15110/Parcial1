@@ -79,12 +79,12 @@ public class ServicioAdicional implements IaCalculable {
         this.precio = precio;
     }
 
-    public boolean isDisponicilidad() {
+    public boolean isDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponicilidad(boolean disponicilidad) {
-        this.disponibilidad = disponicilidad;
+    public void setDisponibilidad(boolean disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
 
     public TipoServicioAdicional getTipo() {
