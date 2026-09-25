@@ -5,15 +5,15 @@ public class ServicioAdicional {
     private String nombre;
     private String descripcion;
     private double precio;
-    private boolean disponicilidad;
+    private boolean disponibilidad;
     private TipoServicioAdicional tipo;
 
-    public ServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean disponicilidad, TipoServicioAdicional tipo) {
+    public ServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean disponibilidad, TipoServicioAdicional tipo) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.disponicilidad = disponicilidad;
+        this.disponibilidad = disponibilidad;
         this.tipo = tipo;
     }
 
@@ -50,11 +50,11 @@ public class ServicioAdicional {
     }
 
     public boolean isDisponicilidad() {
-        return disponicilidad;
+        return disponibilidad;
     }
 
     public void setDisponicilidad(boolean disponicilidad) {
-        this.disponicilidad = disponicilidad;
+        this.disponibilidad = disponicilidad;
     }
 
     public TipoServicioAdicional getTipo() {
@@ -72,7 +72,7 @@ public class ServicioAdicional {
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", precio=" + precio +
-                ", disponicilidad=" + disponicilidad +
+                ", disponicilidad=" + disponibilidad +
                 ", tipo=" + tipo +
                 '}';
     }

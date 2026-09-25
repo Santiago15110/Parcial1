@@ -13,9 +13,11 @@ public abstract class PlanEntrenamiento {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.duracionMeses = duracionMeses;
-        this.valorMensual = 70000;
+        this.valorMensual = valorMensual;
         this.estado = estado;
     }
+
+    public abstract double calcularValorTotal();
 
     public String getCodigo() {
         return codigo;

@@ -15,6 +15,21 @@ public class Gym {
     private ArrayList<ServicioAdicional> listServicioAdicional;
     private ArrayList<Inscripcion> listIncripcion;
 
+
+    /**
+     * Metodo constructor
+     * @param nombre
+     * @param nit
+     * @param direccion
+     * @param telefono
+     * @param correoElectronico
+     * @param paginaWeb
+     * @param listClientes
+     * @param listEntrenador
+     * @param listPlanEntrenamiento
+     * @param listServicioAdicional
+     * @param listIncripcion
+     */
     public Gym(String nombre, String nit, String direccion, String telefono, String correoElectronico, String paginaWeb, ArrayList<Cliente> listClientes, ArrayList<Entrenador> listEntrenador, ArrayList<PlanEntrenamiento> listPlanEntrenamiento, ArrayList<ServicioAdicional> listServicioAdicional, ArrayList<Inscripcion> listIncripcion) {
         this.nombre = nombre;
         this.nit = nit;
@@ -27,6 +42,41 @@ public class Gym {
         this.listPlanEntrenamiento = new ArrayList<>();
         this.listServicioAdicional = new ArrayList<>();
         this.listIncripcion = new ArrayList<>();
+    }
+
+
+    /**
+     * Metodo para crear el plan basico y premium en gimnasio
+     * @param tipo
+     * @param codigo
+     * @param nombre
+     * @param descripcion
+     * @param duracionMeses
+     * @param valorMensual
+     * @param estado
+     * @return
+     */
+    public boolean crearPlanEntrenamiento(TipoPlanEntrenamiento tipo, String codigo, String nombre, String descripcion, int duracionMeses, double valorMensual, EstadoPlan estado ){
+
+        if(existePlanConCodigo(codigo)){
+            return false;
+        }
+        PlanEntrenamiento plan = PlanFactory.crearPlan(tipo, codigo, nombre, descripcion, duracionMeses, valorMensual, estado);
+
+        return listPlanEntrenamiento.add(plan);
+    }
+
+
+    public
+
+
+    /**
+     * metodo para encontrar un codigo de plan ya existente
+     * @param codigo
+     * @return
+     */
+    public boolean existePlanConCodigo(String codigo){
+        return listPlanEntrenamiento.stream().anyMatch(p -> p.getCodigo().equals(codigo));
     }
 
     public String getNombre() {
