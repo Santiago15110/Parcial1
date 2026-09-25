@@ -65,7 +65,7 @@
 
     <Label fx:id="lblMensajePlan" prefWidth="240.0" style="-fx-text-fill: #c0392b;" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="742.0" />
 
-    <Button onAction="#handleRegistrarPlan" style="-fx-padding: 6 20;" text="Registrar " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="780.0" />
+    <Button layoutX="31.0" layoutY="521.0" onAction="#handleRegistrarPlan" style="-fx-padding: 6 20;" text="Registrar " AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="521.0" />
 
 
 

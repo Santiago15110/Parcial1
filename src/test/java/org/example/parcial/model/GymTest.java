@@ -17,12 +17,9 @@ class GymTest {
 
     @BeforeEach
     void setUp() {
-        gym = new Gym(
+        gym = Gym.getInstance(
                 "PowerGym", "900123456-1", "Calle 10 # 5-20",
-                "3001234567", "contacto@powergym.com", "www.powergym.com",
-                new ArrayList<>(), new ArrayList<>(), new ArrayList<>(),
-                new ArrayList<>(), new ArrayList<>()
-        );
+                "3001234567", "contacto@powergym.com", "www.powergym.com");
     }
 
 
@@ -38,11 +35,9 @@ class GymTest {
             ArrayList<Cliente> clientesConDatos = new ArrayList<>();
             clientesConDatos.add(new Cliente("Ana", "111", 3000000000L, "ana@mail.com", 25, LocalDate.now()));
 
-            Gym gymConDatosPrevios = new Gym(
+            Gym gymConDatosPrevios = Gym.getInstance(
                     "OtroGym", "900999999-1", "Calle 1", "3000000000",
-                    "otro@mail.com", "www.otro.com",
-                    clientesConDatos, new ArrayList<>(), new ArrayList<>(),
-                    new ArrayList<>(), new ArrayList<>()
+                    "otro@mail.com", "www.otro.com"
             );
 
             // el constructor no asigna las listas recibidas,
