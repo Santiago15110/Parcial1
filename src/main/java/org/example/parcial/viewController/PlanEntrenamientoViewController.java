@@ -1,11 +1,12 @@
 package org.example.parcial.viewController;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
 import javafx.scene.layout.AnchorPane;
+
 import org.example.parcial.App;
 import org.example.parcial.controller.IAppControlable;
 import org.example.parcial.model.*;
