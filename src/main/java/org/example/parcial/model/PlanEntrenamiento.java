@@ -8,6 +8,15 @@ public abstract class PlanEntrenamiento {
     protected double valorMensual;
     protected EstadoPlan estado;
 
+    /**
+     * metodo contructor de plan de entrenamiento
+     * @param codigo
+     * @param nombre
+     * @param descripcion
+     * @param duracionMeses
+     * @param valorMensual
+     * @param estado
+     */
     public PlanEntrenamiento(String codigo, String nombre, String descripcion, int duracionMeses, double valorMensual, EstadoPlan estado) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -17,7 +26,18 @@ public abstract class PlanEntrenamiento {
         this.estado = estado;
     }
 
+    /**
+     * metodo abstracto para calcular el valor total
+     * @return
+     */
     public abstract double calcularValorTotal();
+
+
+    /**
+     * metodo abstracto para obetener el tipo de cada subclase
+     * @return
+     */
+    public abstract TipoPlanEntrenamiento getTipo();
 
     public String getCodigo() {
         return codigo;

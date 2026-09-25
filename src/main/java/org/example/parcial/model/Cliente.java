@@ -5,12 +5,12 @@ import java.time.LocalDate;
 public class Cliente {
     private String nombre;
     private String identificacion;
-    private String telefono;
+    private long telefono;
     private String correoElectronico;
     private int edad;
     private LocalDate fechaIngreso;
 
-    public Cliente(String nombre, String identificacion, String telefono, String correoElectronico, int edad, LocalDate fechaIngreso) {
+    public Cliente(String nombre, String identificacion, long telefono, String correoElectronico, int edad, LocalDate fechaIngreso) {
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.telefono = telefono;
@@ -35,11 +35,11 @@ public class Cliente {
         this.identificacion = identificacion;
     }
 
-    public String getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 
