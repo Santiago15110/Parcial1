@@ -10,158 +10,92 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600.0"
-            prefWidth="870.0"
-            xmlns="http://javafx.com/javafx/26"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.parcial.viewController.InscripcionViewController">
+<AnchorPane prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
 
     <children>
-
-        <VBox layoutX="48.0"
-              layoutY="29.0"
-              prefWidth="772.0"
-              spacing="20.0">
+        <VBox layoutX="29.0" layoutY="4.0" prefHeight="678.0" prefWidth="791.0" spacing="20.0">
 
             <children>
 
-                <!-- Espacio superior -->
-                <VBox prefWidth="293.0"
-                      spacing="6.0" />
-
                 <!-- Botón regresar -->
-                <Button mnemonicParsing="false"
-                        prefHeight="40.0"
-                        prefWidth="125.0"
-                        style="-fx-background-color: white; -fx-border-color: #d0d0d0; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-size: 13px;"
-                        text="←  Regresar"
-                        onAction="#handleRegresar" />
+                
+                <!-- SERVICIOS ADICIONALES -->
+                <VBox prefWidth="293.0" spacing="6.0" />
+
+
+                <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-size: 13px;" text="←  Regresar" />
 
                 <!-- Título -->
-                <Label style="-fx-font-size: 32px; -fx-font-weight: bold;"
-                       text="Gestionar inscripciones" />
+                <Label style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Gestionar inscripciones" />
 
-                <HBox prefWidth="772.0"
-                      spacing="45.0">
+                <!-- Contenido -->
+                <HBox prefWidth="772.0" spacing="45.0">
 
-                    <children>
+                    <!-- Formulario -->
+                    <VBox prefWidth="293.0" spacing="7.0">
 
-                        <!-- FORMULARIO -->
-                        <VBox prefWidth="293.0"
-                              spacing="7.0">
+                        <children>
 
-                            <children>
+                            <Label style="-fx-font-size: 14px;" text="Cliente" />
 
-                                <!-- Cliente -->
-                                <Label style="-fx-font-size: 14px;"
-                                       text="Cliente" />
+                            <ComboBox prefHeight="43.0" prefWidth="293.0" promptText="Seleccionar cliente" style="-fx-font-size: 14px;" />
 
-                                <ComboBox fx:id="cbCliente"
-                                          prefHeight="43.0"
-                                          prefWidth="293.0"
-                                          promptText="Seleccionar cliente"
-                                          style="-fx-font-size: 14px;" />
+                            <VBox prefHeight="4.0" />
 
-                                <VBox prefHeight="4.0" />
+                            <Label style="-fx-font-size: 14px;" text="Plan de entrenamiento" />
 
-                                <!-- Plan -->
-                                <Label style="-fx-font-size: 14px;"
-                                       text="Plan de entrenamiento" />
+                            <ComboBox prefHeight="43.0" prefWidth="293.0" promptText="Seleccionar plan" style="-fx-font-size: 14px;" />
 
-                                <ComboBox fx:id="cbPlan"
-                                          prefHeight="43.0"
-                                          prefWidth="293.0"
-                                          promptText="Seleccionar plan"
-                                          style="-fx-font-size: 14px;" />
+                            <VBox prefHeight="4.0" />
 
-                                <VBox prefHeight="4.0" />
+                            <Label style="-fx-font-size: 14px;" text="Fecha de inicio" />
 
-                                <!-- Fecha -->
-                                <Label style="-fx-font-size: 14px;"
-                                       text="Fecha de inscripción" />
+                            <DatePicker prefHeight="43.0" prefWidth="293.0" promptText="dd/mm/aaaa" style="-fx-font-size: 14px;" />
+                     <Label style="-fx-font-size: 14px;" text="Fecha Final" />
+                     <DatePicker prefHeight="43.0" prefWidth="293.0" promptText="dd/mm/aaaa" style="-fx-font-size: 14px;" />
 
-                                <DatePicker fx:id="dpFechaInscripcion"
-                                            prefHeight="43.0"
-                                            prefWidth="293.0"
-                                            promptText="dd/mm/aaaa"
-                                            style="-fx-font-size: 14px;" />
+                        </children>
+                    </VBox>
 
-                                <!-- Servicios adicionales -->
-                                <Label style="-fx-font-size: 14px;"
-                                       text="Servicios adicionales" />
+                    <!-- Tabla -->
+                    <VBox prefHeight="337.0" prefWidth="634.0" spacing="8.0">
 
-                                <ComboBox fx:id="cbServicio"
-                                          prefHeight="40.0"
-                                          prefWidth="293.0"
-                                          promptText="Seleccionar servicio"
-                                          style="-fx-font-size: 14px;" />
+                        <children>
 
-                            </children>
+                            <Label style="-fx-font-size: 18px;" text="Lista de inscripciones" />
 
-                        </VBox>
+                            <TableView prefHeight="301.0" prefWidth="545.0" style="-fx-border-color: #dddddd; -fx-border-radius: 8; -fx-background-radius: 8;">
 
-                        <!-- TABLA -->
-                        <VBox prefHeight="337.0"
-                              prefWidth="465.0"
-                              spacing="8.0">
+                                <columns>
 
-                            <children>
+                                    <TableColumn prefWidth="87.0" text="Cliente" />
 
-                                <Label style="-fx-font-size: 18px;"
-                                       text="Lista de inscripciones" />
+                                    <TableColumn prefWidth="86.0" text="Plan" />
 
-                                <TableView fx:id="tablaInscripciones"
-                                           prefHeight="301.0"
-                                           prefWidth="481.0"
-                                           style="-fx-border-color: #dddddd; -fx-border-radius: 8; -fx-background-radius: 8;">
+                                    <TableColumn prefWidth="86.0" text="Fecha Inicio" />
 
-                                    <columns>
+                                    <TableColumn prefWidth="95.33331298828125" text="Fecha final" />
 
-                                        <TableColumn fx:id="colCliente"
-                                                     prefWidth="87.0"
-                                                     text="Cliente" />
+                                    <TableColumn prefWidth="96.66668701171875" text="Servicios" />
+                           <TableColumn prefWidth="86.0" text="Total" />
 
-                                        <TableColumn fx:id="colPlan"
-                                                     prefWidth="86.0"
-                                                     text="Plan" />
+                                </columns>
 
-                                        <TableColumn fx:id="colFecha"
-                                                     prefWidth="86.0"
-                                                     text="Fecha" />
+                            </TableView>
 
-                                        <TableColumn fx:id="colServicios"
-                                                     prefWidth="116.0"
-                                                     text="Servicios" />
-
-                                        <TableColumn fx:id="colTotal"
-                                                     prefWidth="76.0"
-                                                     text="Total" />
-
-                                    </columns>
-
-                                </TableView>
-
-                            </children>
-
-                        </VBox>
-
-                    </children>
+                        </children>
+                    </VBox>
+               <Label style="-fx-font-size: 14px;" text="Servicios adicionales" />
 
                 </HBox>
+                  <Label style="-fx-font-size: 14px;" text="Servicios adicionales" />
+      
+                           <ComboBox prefHeight="40.0" prefWidth="203.0" promptText="Seleccionar servicio" style="-fx-font-size: 14px;" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" text="Registrar Inscripcion" />
 
             </children>
 
         </VBox>
-
-        <!-- Botón registrar -->
-        <Button layoutX="48.0"
-                layoutY="533.0"
-                mnemonicParsing="false"
-                prefHeight="40.0"
-                prefWidth="125.0"
-                text="Registrar Inscripcion"
-                onAction="#handleRegistrarInscripcion" />
-
     </children>
 
 </AnchorPane>

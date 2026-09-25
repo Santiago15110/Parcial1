@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+
+        <Button fx:id="btnRegresar" layoutX="56.0" layoutY="22.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" text="← Regresar" />
+
+        <Label layoutX="56.0" layoutY="78.0" text="Consultar cliente">
+            <font>
+                <Font name="System Bold" size="34.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="56.0" layoutY="132.0" prefWidth="980.0" text="Busca un cliente por su número de teléfono y verifica si dicho número es perfecto." wrapText="true">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+
+        <VBox layoutX="56.0" layoutY="190.0" prefWidth="420.0" spacing="12.0">
+            <children>
+
+                <Label text="Número de teléfono">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="txtTelefono" prefHeight="45.0" prefWidth="420.0" promptText="Ej. 3001234567" />
+
+                <Button fx:id="btnBuscar" mnemonicParsing="false" prefHeight="45.0" prefWidth="420.0" text="Buscar cliente" />
+
+            </children>
+        </VBox>
+
+        <Pane layoutX="563.0" layoutY="190.0" prefHeight="370.0" prefWidth="500.0">
+            <children>
+
+                <Label layoutX="25.0" layoutY="20.0" text="Resultado de la búsqueda">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="25.0" layoutY="72.0" text="Nombre del cliente:">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <Label fx:id="lblNombreCliente" layoutX="205.0" layoutY="72.0" text="-">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="25.0" layoutY="112.0" text="Teléfono:">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <Label fx:id="lblTelefono" layoutX="205.0" layoutY="112.0" text="-">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="25.0" layoutY="152.0" text="Es número perfecto:">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <Label fx:id="lblEsPerfecto" layoutX="205.0" layoutY="152.0" text="-">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+
+                <Pane layoutX="25.0" layoutY="190.0" prefHeight="1.0" prefWidth="450.0" />
+
+                <Label layoutX="25.0" layoutY="215.0" text="Divisores propios:">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <Label fx:id="lblDivisores" layoutX="205.0" layoutY="215.0" prefWidth="270.0" text="-" wrapText="true">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="25.0" layoutY="285.0" text="Suma de divisores:">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <Label fx:id="lblSumaDivisores" layoutX="205.0" layoutY="285.0" text="-">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>
