@@ -13,7 +13,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
 
     <children>
-        <VBox layoutX="48.0" layoutY="29.0" prefWidth="772.0" spacing="20.0">
+        <VBox layoutX="29.0" layoutY="4.0" prefHeight="678.0" prefWidth="791.0" spacing="20.0">
 
             <children>
 
@@ -48,24 +48,23 @@
 
                             <VBox prefHeight="4.0" />
 
-                            <Label style="-fx-font-size: 14px;" text="Fecha de inscripción" />
+                            <Label style="-fx-font-size: 14px;" text="Fecha de inicio" />
 
                             <DatePicker prefHeight="43.0" prefWidth="293.0" promptText="dd/mm/aaaa" style="-fx-font-size: 14px;" />
-                           <Label style="-fx-font-size: 14px;" text="Servicios adicionales" />
-               
-                           <ComboBox prefHeight="40.0" prefWidth="293.0" promptText="Seleccionar servicio" style="-fx-font-size: 14px;" />
+                     <Label style="-fx-font-size: 14px;" text="Fecha Final" />
+                     <DatePicker prefHeight="43.0" prefWidth="293.0" promptText="dd/mm/aaaa" style="-fx-font-size: 14px;" />
 
                         </children>
                     </VBox>
 
                     <!-- Tabla -->
-                    <VBox prefHeight="337.0" prefWidth="465.0" spacing="8.0">
+                    <VBox prefHeight="337.0" prefWidth="634.0" spacing="8.0">
 
                         <children>
 
                             <Label style="-fx-font-size: 18px;" text="Lista de inscripciones" />
 
-                            <TableView prefHeight="301.0" prefWidth="481.0" style="-fx-border-color: #dddddd; -fx-border-radius: 8; -fx-background-radius: 8;">
+                            <TableView prefHeight="301.0" prefWidth="545.0" style="-fx-border-color: #dddddd; -fx-border-radius: 8; -fx-background-radius: 8;">
 
                                 <columns>
 
@@ -73,11 +72,12 @@
 
                                     <TableColumn prefWidth="86.0" text="Plan" />
 
-                                    <TableColumn prefWidth="86.0" text="Fecha" />
+                                    <TableColumn prefWidth="86.0" text="Fecha Inicio" />
 
-                                    <TableColumn prefWidth="116.0" text="Servicios" />
+                                    <TableColumn prefWidth="95.33331298828125" text="Fecha final" />
 
-                                    <TableColumn prefWidth="76.0" text="Total" />
+                                    <TableColumn prefWidth="96.66668701171875" text="Servicios" />
+                           <TableColumn prefWidth="86.0" text="Total" />
 
                                 </columns>
 
@@ -85,13 +85,17 @@
 
                         </children>
                     </VBox>
+               <Label style="-fx-font-size: 14px;" text="Servicios adicionales" />
 
                 </HBox>
+                  <Label style="-fx-font-size: 14px;" text="Servicios adicionales" />
+      
+                           <ComboBox prefHeight="40.0" prefWidth="203.0" promptText="Seleccionar servicio" style="-fx-font-size: 14px;" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" text="Registrar Inscripcion" />
 
             </children>
 
         </VBox>
-      <Button layoutX="48.0" layoutY="533.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" text="Registrar Inscripcion" />
     </children>
 
 </AnchorPane>
