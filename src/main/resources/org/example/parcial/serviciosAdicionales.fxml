@@ -34,9 +34,12 @@
     <Label text="Disponibilidad" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="334.0" />
     <ComboBox fx:id="cbDisponibilidad" prefWidth="110.0" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="356.0" />
 
-    <Label fx:id="lblMensajeServicio" prefWidth="240.0" style="-fx-text-fill: #c0392b;" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="392.0" />
+    <Label text="Tipo" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="392.0" />
+    <ComboBox fx:id="cbTipo" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="414.0" />
 
-    <Button layoutX="27.0" layoutY="439.0" onAction="#handleRegistrarServicio" style="-fx-padding: 6 20;" text="Registrar servicio" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="439.0" />
+    <Label fx:id="lblMensajeServicio" prefWidth="240.0" style="-fx-text-fill: #c0392b;" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="452.0" />
+
+    <Button layoutX="27.0" layoutY="439.0" onAction="#handleRegistrarServicio" style="-fx-padding: 6 20;" text="Registrar servicio" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="499.0" />
 
 
 
@@ -49,6 +52,7 @@
             <TableColumn fx:id="colDescripcion" prefWidth="180" text="Descripcion" />
             <TableColumn fx:id="colPrecio" prefWidth="100" text="Precio" />
             <TableColumn fx:id="colDisponibilidad" prefWidth="110" text="Disponibilidad" />
+            <TableColumn fx:id="colTipo" prefWidth="120" text="Tipo" />
         </columns>
         <placeholder>
             <Label text="Tabla sin contenido" />

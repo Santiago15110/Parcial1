@@ -192,6 +192,21 @@ public class Gym {
     }
 
 
+    public boolean registrarServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean disponibilidad, TipoServicioAdicional tipo) {
+
+        ServicioAdicional servicio = new ServicioAdicional(codigo, nombre, descripcion, precio, disponibilidad, tipo);
+
+        for(ServicioAdicional s: listServicioAdicional){
+            if(s.getCodigo().equals(codigo)){
+                return false;
+            }
+        }
+
+        return listServicioAdicional.add(servicio);
+
+    }
+
+
 
 
     public String getNombre() {
@@ -298,4 +313,6 @@ public class Gym {
                 ", listIncripcion=" + listIncripcion +
                 '}';
     }
+
+
 }

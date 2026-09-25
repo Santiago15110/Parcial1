@@ -22,7 +22,6 @@ public class EntrenadorViewController implements IAppControlable {
 
     @FXML private TextField txtIdentificacion;
     @FXML private TextField txtNombre;
-    @FXML private TextField txtEspecialidad;
     @FXML private TextField txtTelefono;
     @FXML private TextField txtTarifa;
 
@@ -31,7 +30,6 @@ public class EntrenadorViewController implements IAppControlable {
     @FXML private TableView<Entrenador> tablaEntrenadores;
     @FXML private TableColumn<Entrenador, String> colNombre;
     @FXML private TableColumn<Entrenador, String> colIdentificacion;
-    @FXML private TableColumn<Entrenador, String> colEspecialidad;
     @FXML private TableColumn<Entrenador, String> colTelefono;
     @FXML private TableColumn<Entrenador, Double> colTarifa;
 
@@ -67,13 +65,11 @@ public class EntrenadorViewController implements IAppControlable {
 
         String id = txtIdentificacion.getText();
         String nombre = txtNombre.getText();
-        String especialidad = txtEspecialidad.getText();
         String telefono = txtTelefono.getText();
         String tarifaTexto = txtTarifa.getText();
 
         if (id == null || id.isBlank() ||
                 nombre == null || nombre.isBlank() ||
-                especialidad == null || especialidad.isBlank() ||
                 telefono == null || telefono.isBlank() ||
                 tarifaTexto == null || tarifaTexto.isBlank()) {
             lblMensajeEntrenador.setText("Complete los campos obligatorios.");
@@ -105,7 +101,6 @@ public class EntrenadorViewController implements IAppControlable {
     private void limpiarCampos() {
         txtIdentificacion.clear();
         txtNombre.clear();
-        txtEspecialidad.clear();
         txtTelefono.clear();
         txtTarifa.clear();
     }

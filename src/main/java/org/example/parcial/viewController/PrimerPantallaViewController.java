@@ -95,12 +95,12 @@ public class PrimerPantallaViewController implements IAppControlable {
 
     @FXML
     private void irGestionServicios() throws IOException {
-        app.getSceneManager().cambiarEscena("/org/example/parcial/servicio.fxml");
+        app.getSceneManager().cambiarEscena("/org/example/parcial/serviciosAdicionales.fxml");
     }
 
     @FXML
     private void irGestionInscripciones() throws IOException{
-        app.getSceneManager().cambiarEscena("/org/example/parcial/inscripcion.fxml");
+        app.getSceneManager().cambiarEscena("/org/example/parcial/inscripciones.fxml");
     }
 
     

@@ -111,6 +111,18 @@ public class Inscripcion implements IaCalculable {
         this.valorTotal = valorTotal;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public List<ServicioAdicional> getListServiciosAdicionales() {
+        return listServiciosAdicionales;
+    }
+
+    public PlanEntrenamiento getPlan() {
+        return plan;
+    }
+
     @Override
     public String toString() {
         return "Inscripcion{" +
