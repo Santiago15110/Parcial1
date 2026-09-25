@@ -47,7 +47,7 @@ public class Gym {
 
     public static Gym getInstance(String nombre, String nit, String direccion, String telefono, String correoElectronico, String paginaWeb){
         if(instancia == null){
-            instancia = new Gym(nombre, nit, telefono, direccion, correoElectronico, paginaWeb);
+            instancia = new Gym(nombre, nit, direccion, telefono, correoElectronico, paginaWeb);
 
 
         }
