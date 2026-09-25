@@ -9,7 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="525.0" prefWidth="956.0" style="-fx-background-color: #f2f2f0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.controller.ServicioAdicionalController">
+<AnchorPane prefHeight="525.0" prefWidth="956.0" style="-fx-background-color: #f2f2f0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.viewController.ServicioAdicionalViewController">
 
 
     <Button onAction="#handleRegresar" text="&lt;- Regresar" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="14.0" />

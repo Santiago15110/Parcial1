@@ -71,13 +71,11 @@ public class PrimerPantallaViewController implements IAppControlable {
     @FXML
     private void agregarServicio() {
         System.out.println("Agregando servicio...");
-        // Aquí después agregaremos el servicio a la tabla.
     }
 
     @FXML
     private void guardarInscripcion() {
         System.out.println("Guardando inscripción...");
-        // Aquí después guardaremos la inscripción en Gym.
     }
 
     @FXML

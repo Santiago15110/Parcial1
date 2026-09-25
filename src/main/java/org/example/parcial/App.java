@@ -14,6 +14,7 @@ public class App {
         this.gym = Gym.getInstance("Luxury", "123456", "calle 15", "3138761284", "luxury@hotmail.com", "luxury.com");
         this.stagePrincipal = stagePrincipal;
         this.sceneManager = new SceneManager(stagePrincipal);
+        this.sceneManager.setApp(this);
     }
 
     public Gym getGym() {
@@ -26,8 +27,5 @@ public class App {
 
     public SceneManager getSceneManager() {
         return sceneManager;
-    }
-
-    public void setStagePrincipal(Stage stage) {
     }
 }
