@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="560" prefWidth="1152.0" style="-fx-background-color: #f2f2f0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.controller.EntrenadorController">
+
+
+    <Button onAction="#handleRegresar" text="&lt;- Regresar" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="14.0" />
+
+
+    <Label style="-fx-font-size: 28px;" text="Gestionar entrenadores" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="60.0" />
+
+
+    <Label text="Identificacion" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="140.0" />
+    <TextField fx:id="txtIdentificacion" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="162.0" />
+
+    <Label text="Nombre completo" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="204.0" />
+    <TextField fx:id="txtNombre" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="226.0" />
+
+    <Label text="Especialidad" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="268.0" />
+    <TextField fx:id="txtEspecialidad" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="290.0" />
+
+    <Label text="Telefono" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="332.0" />
+    <TextField fx:id="txtTelefono" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="354.0" />
+
+    <Label text="Tarifa por sesion" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="396.0" />
+    <TextField fx:id="txtTarifa" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="418.0" />
+
+    <Label fx:id="lblMensajeEntrenador" prefWidth="240.0" style="-fx-text-fill: #c0392b;" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="460.0" />
+
+    <Button onAction="#handleRegistrarEntrenador" style="-fx-padding: 6 20;" text="Registrar" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="494.0" />
+
+
+
+    <Label style="-fx-font-size: 16px;" text="Lista de entrenadores" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="108.0" />
+
+    <TableView fx:id="tablaEntrenadores" prefHeight="390.0" prefWidth="660.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="140.0">
+        <columns>
+            <TableColumn fx:id="colNombre" prefWidth="160" text="Nombre" />
+            <TableColumn fx:id="colIdentificacion" prefWidth="140" text="Identificacion" />
+            <TableColumn fx:id="colEspecialidad" prefWidth="140" text="Especialidad" />
+            <TableColumn fx:id="colTelefono" prefWidth="120" text="Telefono" />
+            <TableColumn fx:id="colTarifa" prefWidth="100" text="Tarifa" />
+        </columns>
+        <placeholder>
+            <Label text="Tabla sin contenido" />
+        </placeholder>
+    </TableView>
+
+</AnchorPane>
