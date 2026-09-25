@@ -143,8 +143,6 @@ public class ServicioAdicionalViewController implements IAppControlable {
 
     @FXML
     private void handleRegresar() throws IOException {
-        app.getSceneManager().cambiarEscena(
-                "/org/example/parcial/primerPantalla.fxml"
-        );
+        app.getSceneManager().cambiarEscena("/org/example/parcial/primerPantalla.fxml");
     }
 }

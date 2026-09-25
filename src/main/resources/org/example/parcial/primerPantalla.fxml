@@ -1,44 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.parcial.viewController.PrimerPantallaViewController"
-            prefHeight="600.0" prefWidth="750.0">
 
-    <Label text="Gimnasio Luxury"
-           style="-fx-font-size: 36px; -fx-font-weight: bold;"
-           layoutX="200.0" layoutY="60.0" />
-
-    <VBox spacing="1"
-          layoutX="285.0" layoutY="200.0"
-          prefWidth="300.0">
-
-        <Button text="Gestion de los clientes"
-                onAction="#irGestionClientes"
-                prefWidth="300.0" prefHeight="40.0" />
-
-        <Button text="Gestion de los entrenadores"
-                onAction="#irGestionEntrenadores"
-                prefWidth="300.0" prefHeight="40.0" />
-
-        <Button text="Gestionar planes de entrenamiento"
-                onAction="#irGestionPlanes"
-                prefWidth="300.0" prefHeight="40.0" />
-
-        <Button text="Gestion de los servicios adicionales"
-                onAction="#irGestionServicios"
-                prefWidth="300.0" prefHeight="40.0" />
-
-        <Button text="Inscripcion"
-                onAction="#irGestionInscripciones"
-                prefWidth="300.0" prefHeight="40.0" />
-
-    </VBox>
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.viewController.PrimerPantallaViewController">
+    <children>
+        <Label layoutX="103.0" layoutY="14.0" prefHeight="65.0" prefWidth="378.0" text="Gimnasio Luxury">
+            <font>
+                <Font size="50.0" />
+            </font>
+        </Label>
+        <VBox layoutX="175.0" layoutY="113.0" prefHeight="200.0" prefWidth="234.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#irGestionClientes" prefHeight="37.0" prefWidth="234.0" text="Gestion de los clientes" />
+                <Button mnemonicParsing="false" onAction="#irGestionEntrenadores" prefHeight="37.0" prefWidth="234.0" text="Gestion de los entrenadores" />
+                <Button mnemonicParsing="false" onAction="#irGestionPlanes" prefHeight="37.0" prefWidth="234.0" text="Gestionar planes de entrenamiento" />
+                <Button mnemonicParsing="false" onAction="#irGestionServicios" prefHeight="37.0" prefWidth="234.0" text="Gestion de los servicios adicionales" />
+                <Button mnemonicParsing="false" onAction="#irGestionInscripciones" prefHeight="37.0" prefWidth="234.0" text="Inscripcion" />
+                <Button mnemonicParsing="false" onAction="#irConsultas" prefHeight="37.0" prefWidth="234.0" text="Consultas" />
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>

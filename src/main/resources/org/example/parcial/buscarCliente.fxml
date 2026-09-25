@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="680.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="680.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.viewController.ConsultaViewController">
 
     <children>
 
-        <Button fx:id="btnRegresar" layoutX="56.0" layoutY="22.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" text="← Regresar" />
+        <Button fx:id="btnRegresar" layoutX="56.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRegresar" prefHeight="38.0" prefWidth="120.0" text="← Regresar" />
 
         <Label layoutX="56.0" layoutY="78.0" text="Consultar cliente">
             <font>
@@ -37,7 +37,9 @@
 
                 <TextField fx:id="txtTelefono" prefHeight="45.0" prefWidth="420.0" promptText="Ej. 3001234567" />
 
-                <Button fx:id="btnBuscar" mnemonicParsing="false" prefHeight="45.0" prefWidth="420.0" text="Buscar cliente" />
+                <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#handleBuscarCliente" prefHeight="45.0" prefWidth="420.0" text="Buscar cliente" />
+
+                <Label fx:id="lblMensajeConsulta" prefWidth="420.0" style="-fx-text-fill: #c0392b;" wrapText="true" />
 
             </children>
         </VBox>

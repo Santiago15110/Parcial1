@@ -20,14 +20,16 @@ public class InscripcionViewController implements IAppControlable {
 
     @FXML private ComboBox<Cliente> cbCliente;
     @FXML private ComboBox<PlanEntrenamiento> cbPlan;
-    @FXML private DatePicker dpFechaInscripcion;
+    @FXML private DatePicker dpFechaInicio;
+    @FXML private DatePicker dpFechaFin;
     @FXML private ComboBox<ServicioAdicional> cbServicio;
     @FXML private Label lblMensajeInscripcion;
 
     @FXML private TableView<Inscripcion> tablaInscripciones;
     @FXML private TableColumn<Inscripcion, String> colCliente;
     @FXML private TableColumn<Inscripcion, String> colPlan;
-    @FXML private TableColumn<Inscripcion, String> colFecha;
+    @FXML private TableColumn<Inscripcion, String> colFechaInicio;
+    @FXML private TableColumn<Inscripcion, String> colFechaFin;
     @FXML private TableColumn<Inscripcion, String> colServicios;
     @FXML private TableColumn<Inscripcion, String> colTotal;
 
@@ -48,14 +50,31 @@ public class InscripcionViewController implements IAppControlable {
                 new SimpleStringProperty(d.getValue().getCliente().getNombre()));
         colPlan.setCellValueFactory(d ->
                 new SimpleStringProperty(d.getValue().getPlan().getNombre()));
-        colFecha.setCellValueFactory(d ->
+        colFechaInicio.setCellValueFactory(d ->
                 new SimpleStringProperty(String.valueOf(d.getValue().getFechaInicio())));
+        colFechaFin.setCellValueFactory(d ->
+                new SimpleStringProperty(String.valueOf(d.getValue().getFechaFin())));
         colServicios.setCellValueFactory(d ->
                 new SimpleStringProperty(String.valueOf(d.getValue().getListServiciosAdicionales().size())));
         colTotal.setCellValueFactory(d ->
                 new SimpleStringProperty(String.valueOf(d.getValue().getValorTotal())));
 
         tablaInscripciones.setItems(datosTabla);
+
+        dpFechaFin.setDisable(true);
+        cbPlan.valueProperty().addListener((obs, oldVal, newVal) -> actualizarFechaFinPreview());
+        dpFechaInicio.valueProperty().addListener((obs, oldVal, newVal) -> actualizarFechaFinPreview());
+    }
+
+    private void actualizarFechaFinPreview() {
+        PlanEntrenamiento plan = cbPlan.getValue();
+        LocalDate fechaInicio = dpFechaInicio.getValue();
+
+        if (plan != null && fechaInicio != null) {
+            dpFechaFin.setValue(fechaInicio.plusMonths(plan.getDuracionMeses()));
+        } else {
+            dpFechaFin.setValue(null);
+        }
     }
 
     private void cargarInscripcionesEnTabla() {
@@ -68,7 +87,7 @@ public class InscripcionViewController implements IAppControlable {
 
         Cliente cliente = cbCliente.getValue();
         PlanEntrenamiento plan = cbPlan.getValue();
-        LocalDate fecha = dpFechaInscripcion.getValue();
+        LocalDate fecha = dpFechaInicio.getValue();
 
         if (cliente == null || plan == null || fecha == null) {
             lblMensajeInscripcion.setText("Cliente, plan y fecha son obligatorios.");
@@ -77,13 +96,11 @@ public class InscripcionViewController implements IAppControlable {
 
         String id = "INS-" + UUID.randomUUID().toString().substring(0, 8);
 
-        // Calculamos el valor total del plan solo (sin servicios todavia)
         Inscripcion inscripcion = new Inscripcion(id, fecha, cliente, plan, plan.calcularValorTotal());
 
         ServicioAdicional servicio = cbServicio.getValue();
         if (servicio != null) {
             inscripcion.agregarServicioAdicional(servicio);
-            // recalculamos el total ahora que incluye el servicio
             inscripcion.setValorTotal(inscripcion.calcularValor());
         }
 
@@ -103,7 +120,8 @@ public class InscripcionViewController implements IAppControlable {
     private void limpiarCampos() {
         cbCliente.setValue(null);
         cbPlan.setValue(null);
-        dpFechaInscripcion.setValue(null);
+        dpFechaInicio.setValue(null);
+        dpFechaFin.setValue(null);
         cbServicio.setValue(null);
     }
 

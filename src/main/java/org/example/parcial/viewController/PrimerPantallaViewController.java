@@ -103,5 +103,10 @@ public class PrimerPantallaViewController implements IAppControlable {
         app.getSceneManager().cambiarEscena("/org/example/parcial/inscripciones.fxml");
     }
 
+    @FXML
+    private void irConsultas() throws IOException {
+        app.getSceneManager().cambiarEscena("/org/example/parcial/buscarCliente.fxml");
+    }
+
     
 }
