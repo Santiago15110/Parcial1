@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="642.0" prefWidth="947.0" style="-fx-background-color: #f2f2f0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.controller.PlanEntrenamientoController">
+<AnchorPane prefHeight="642.0" prefWidth="947.0" style="-fx-background-color: #f2f2f0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.viewController.PlanEntrenamientoViewController">
 
 
     <Button onAction="#handleRegresar" text="&lt;- Regresar" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="14.0" />
