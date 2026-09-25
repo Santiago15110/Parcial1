@@ -163,11 +163,7 @@ public class Gym {
 
 
     /**
-     * Determina si un numero es un numero perfecto, es decir, si la suma
-     * de sus divisores propios es igual al mismo numero. Por ejemplo, 6
-     * es perfecto porque sus divisores propios (1, 2 y 3) suman 6.
-     * Se usa junto con buscarClienteByTelefono para resolver la consulta
-     * "el telefono de este cliente, es un numero perfecto?".
+     * Determina si un numero es un numero perfecto.
      * @param numero numero a evaluar
      * @return true si el numero es perfecto
      */
