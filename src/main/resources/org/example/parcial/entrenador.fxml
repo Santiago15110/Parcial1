@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="560" prefWidth="1152.0" style="-fx-background-color: #f2f2f0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.controller.EntrenadorController">
+<AnchorPane prefHeight="560" prefWidth="890.0" style="-fx-background-color: #f2f2f0;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcial.controller.EntrenadorController">
 
 
     <Button onAction="#handleRegresar" text="&lt;- Regresar" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="14.0" />
@@ -22,28 +22,24 @@
     <Label text="Nombre completo" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="204.0" />
     <TextField fx:id="txtNombre" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="226.0" />
 
-    <Label text="Especialidad" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="268.0" />
-    <TextField fx:id="txtEspecialidad" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="290.0" />
+    <Label layoutX="30.0" layoutY="271.0" text="Telefono" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="271.0" />
+    <TextField fx:id="txtTelefono" layoutX="30.0" layoutY="301.0" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="301.0" />
 
-    <Label text="Telefono" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="332.0" />
-    <TextField fx:id="txtTelefono" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="354.0" />
-
-    <Label text="Tarifa por sesion" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="396.0" />
-    <TextField fx:id="txtTarifa" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="418.0" />
+    <Label layoutX="30.0" layoutY="346.0" text="Tarifa por sesion" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="346.0" />
+    <TextField fx:id="txtTarifa" layoutX="30.0" layoutY="373.0" prefWidth="240.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="373.0" />
 
     <Label fx:id="lblMensajeEntrenador" prefWidth="240.0" style="-fx-text-fill: #c0392b;" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="460.0" />
 
-    <Button onAction="#handleRegistrarEntrenador" style="-fx-padding: 6 20;" text="Registrar" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="494.0" />
+    <Button layoutX="35.0" layoutY="445.0" onAction="#handleRegistrarEntrenador" style="-fx-padding: 6 20;" text="Registrar" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="445.0" />
 
 
 
     <Label style="-fx-font-size: 16px;" text="Lista de entrenadores" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="108.0" />
 
-    <TableView fx:id="tablaEntrenadores" prefHeight="390.0" prefWidth="660.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="140.0">
+    <TableView fx:id="tablaEntrenadores" prefHeight="390.0" prefWidth="782.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="140.0">
         <columns>
             <TableColumn fx:id="colNombre" prefWidth="160" text="Nombre" />
             <TableColumn fx:id="colIdentificacion" prefWidth="140" text="Identificacion" />
-            <TableColumn fx:id="colEspecialidad" prefWidth="140" text="Especialidad" />
             <TableColumn fx:id="colTelefono" prefWidth="120" text="Telefono" />
             <TableColumn fx:id="colTarifa" prefWidth="100" text="Tarifa" />
         </columns>
