@@ -10,7 +10,6 @@ public class Inscripcion implements IaCalculable {
     private LocalDate fechaFin;
     private Cliente cliente;
     private PlanEntrenamiento plan;
-    private Entrenador entrenador;
     private List<ServicioAdicional> listServiciosAdicionales;
     private double valorTotal;
 
@@ -35,18 +34,6 @@ public class Inscripcion implements IaCalculable {
 
     }
 
-        /**
-         * Asigna un entrenador a esta inscripcion.
-         * @param entrenador entrenador a asignar
-         * @return true si el entrenador fue asignado correctamente
-         */
-        public boolean asignarEntrenador(Entrenador entrenador) {
-            if (entrenador == null) {
-                return false;
-            }
-            this.entrenador = entrenador;
-            return true;
-        }
 
         /**
          * Asocia un servicio adicional solicitado por el cliente a esta
