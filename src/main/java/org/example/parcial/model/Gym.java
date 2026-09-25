@@ -1,5 +1,6 @@
 package org.example.parcial.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Gym {
@@ -46,6 +47,80 @@ public class Gym {
 
 
     /**
+     * metodo para crear un cliente
+     * @param nombre
+     * @param identificacion
+     * @param telefono
+     * @param correoElectronico
+     * @param edad
+     * @param fechaIngreso
+     * @return
+     */
+    public boolean registrarCliente(String nombre, String identificacion, long telefono, String correoElectronico, int edad, LocalDate fechaIngreso){
+
+        Cliente newCliente = new Cliente(nombre, identificacion, telefono, correoElectronico, edad, fechaIngreso );
+
+        for(Cliente c: listClientes){
+
+            if(c.getIdentificacion().equals(identificacion));
+            return false;
+        }
+
+        if(listClientes == null){
+            return false;
+        }
+
+        listClientes.add(newCliente);
+        return true;
+
+    }
+
+    /**
+     *metodo para buscar un cliente por identificacion
+     * @param identificacion
+     * @return cliente
+     */
+    public Cliente buscarClienteByIdentificacion(String identificacion){
+
+        for(Cliente c: listClientes){
+            if(c.getIdentificacion().equals(identificacion)){
+                return c;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * metodo para registrar un entrenador
+     * @param cedula
+     * @param nombre
+     * @param telefono
+     * @param tarifa
+     * @return
+     */
+    public boolean registrarEntrenador(String cedula, String nombre, String telefono, double tarifa){
+
+        Entrenador newEntrenador = new Entrenador(cedula, nombre, telefono, tarifa);
+
+        if(listEntrenador == null){
+            return false;
+
+        }
+
+        for(Entrenador e: listEntrenador){
+            if(e.getCedula().equals(cedula)){
+                return false;
+            }
+        }
+
+        return listEntrenador.add(newEntrenador);
+    }
+
+
+
+
+
+    /**
      * Metodo para crear el plan basico y premium en gimnasio
      * @param tipo
      * @param codigo
@@ -66,8 +141,15 @@ public class Gym {
         return listPlanEntrenamiento.add(plan);
     }
 
+    /**
+     * Metodo para registrar un plan personalizado
+     * @param plan
+     * @return true
+     */
+    public boolean crearPlanPersonalizado(PlanPersonalizado plan){
 
-    public
+        return listPlanEntrenamiento.add(plan);
+    }
 
 
     /**
@@ -78,6 +160,32 @@ public class Gym {
     public boolean existePlanConCodigo(String codigo){
         return listPlanEntrenamiento.stream().anyMatch(p -> p.getCodigo().equals(codigo));
     }
+
+
+    /**
+     * Determina si un numero es un numero perfecto, es decir, si la suma
+     * de sus divisores propios es igual al mismo numero. Por ejemplo, 6
+     * es perfecto porque sus divisores propios (1, 2 y 3) suman 6.
+     * Se usa junto con buscarClienteByTelefono para resolver la consulta
+     * "el telefono de este cliente, es un numero perfecto?".
+     * @param numero numero a evaluar
+     * @return true si el numero es perfecto
+     */
+    public boolean esNumeroPerfecto(long numero) {
+        if (numero <= 0) {
+            return false;
+        }
+        long suma = 0;
+        for (long i = 1; i < numero; i++) {
+            if (numero % i == 0) {
+                suma += i;
+            }
+        }
+        return suma == numero;
+    }
+
+
+
 
     public String getNombre() {
         return nombre;

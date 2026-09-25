@@ -9,6 +9,7 @@ public class PlanPersonalizado extends PlanEntrenamiento{
         private Entrenador entrenadorAsignado;
 
 
+
         private PlanPersonalizado(Builder builder) {
             super(builder.codigo, builder.nombre, builder.descripcion, builder.duracionMeses, builder.valorMensual, EstadoPlan.ACTIVO);
             this.cantidadSesiones = builder.cantidadSesiones;
@@ -17,7 +18,11 @@ public class PlanPersonalizado extends PlanEntrenamiento{
             this.entrenadorAsignado = builder.entrenadorAsignado;
         }
 
-        @Override
+    /**
+     * metodo para calcular el valor total del plan personalizado
+     * @return
+     */
+    @Override
         public double calcularValorTotal() {
             double base = valorMensual * duracionMeses;
             double costoSesiones = (entrenadorAsignado != null)
@@ -26,7 +31,18 @@ public class PlanPersonalizado extends PlanEntrenamiento{
             return base + costoSesiones;
         }
 
-        public int getCantidadSesiones() {
+
+    /**
+     * metodo para obtener el tipo de entrenamiento
+     * @return tipo de entrenamiento
+     */
+    @Override
+    public TipoPlanEntrenamiento getTipo() {
+        return TipoPlanEntrenamiento.PLAN_PERSONALIZADO;   // ← esto es lo que faltaba
+    }
+
+
+    public int getCantidadSesiones() {
             return cantidadSesiones; }
         public String getEspecialidadRequerida() {
             return especialidadRequerida; }
